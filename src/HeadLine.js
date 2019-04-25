@@ -1,10 +1,10 @@
 import React from 'react'
 
-function HeadLine() {
+function HeadLine(props) {
   return (
     <div className='header'>
       <img src='./logo/whitebear.png' alt='logo'/>
-      <i className="fas fa-bars skyblue"></i>
+      <i className="fas fa-bars skyblue" onClick={() => props.openMenu()}></i>
     </div>
   )
 }

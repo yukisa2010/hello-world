@@ -14,7 +14,9 @@ const Basic =(props) => {
         moveElements={props.moveElements}
         afterEvents={props.afterEvents}
       />
-      <Calculator/>
+      <Calculator
+        setQuestions={props.setQuestions}
+      />
     </div>
   )
 }

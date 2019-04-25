@@ -12,7 +12,8 @@ function WorkParts(props) {
         key={1}
         to='/basic'
         style={{textDecoration: 'none'}}
-      ><p>スタート</p>
+      >
+      <p className='button'>スタート</p>
       </Link>
     </div>
   )

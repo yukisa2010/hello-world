@@ -1,3 +1,5 @@
+
+
 body {
   margin: 0;
   padding: 0;
@@ -22,6 +24,7 @@ p {
   height: 70px;
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
   
   .skyblue {
     color: #97D4D9;
@@ -32,8 +35,8 @@ p {
 
   .skyblue:hover {
     cursor: pointer;
+    color: darken(#97D4D9, 25%);
   }
-
 
   img {
   display:block;
@@ -43,6 +46,51 @@ p {
   width: 50px;
   height: 50px;
   }
+}
+
+#menu {
+  position: absolute;
+  top: 0;
+  right: -180px;
+  padding: 8px;
+  width: 180px;
+  float: right;
+  color: #fff;
+  background-color:#534741;
+  overflow: auto;
+  min-height: 100%;
+  box-sizing: border-box;
+  transition: .4s;
+
+  .close {
+    cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+    right: 0;
+    margin-top: 10px;
+    padding-right: 20px;
+  }
+
+  .close:hover {
+    color: #DB5353;
+  }
+
+  ul {
+    margin-top: 50px;
+    font-size: 20px;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+
+    li {
+      color: #fff;
+    }
+  }
+  
+}
+
+.open {
+  transform: translate(-180px, 0);
 }
 
 .work-menus {
@@ -70,7 +118,7 @@ p {
   }
 
   p {
-    background-color:#DB5353;
+    background-color: #DB5353;
     color: #fff;
     border-radius: 10px;
     line-height: 38px;
@@ -79,6 +127,16 @@ p {
     width: 175px;
     box-shadow: 0 5px 0 darken(#DB5353,20%);
   }
+
+  .button:hover {
+    cursor: pointer;
+  }
+  .button:active {
+    box-shadow: none;
+    position: relative;
+    top: 5px;    
+  }
+
 }
 
 .calendar {
@@ -185,6 +243,8 @@ p {
 .calculator {
   width: 200px;
   margin: 10px auto;
+  position: relative;
+
   table {
     padding-top: 10px;
     border-collapse: separate;
@@ -202,5 +262,85 @@ p {
   }
   td:hover {
     cursor: pointer;
+  }
+
+  td:active {
+    box-shadow: none;
+    position: relative;
+    top: 3px;
+  }
+
+  p {
+    background-color:#DB5353;
+    color: #fff;
+    box-shadow: 0 3px 0 darken(#DB5353, 25%);
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 5px;
+    right: -30px;
+    user-select: none;
+  }
+  
+  .button:hover {
+    cursor: pointer;
+  }
+  .button:active {
+    box-shadow: none;
+    bottom: 0;
+  }
+
+}
+
+
+.login {
+
+  .box {
+    width: 400px;
+    margin: 20px auto;
+    background-color: gray;
+    overflow: hidden;
+    border-radius: 20px;
+
+    img {
+      display: block;
+      margin: 20px auto 30px;
+      border-radius: 10px;
+    }
+
+    input[type='text'] {
+      display: block;
+      margin: 10px auto;
+      text-align: center;
+      border-radius: 10px;
+      height: 20px;
+      width: 170px;
+    }
+    p {
+      display: block;
+      margin: 20px auto;
+      background-color: #97D4D9;
+      box-shadow: 0 5px 0 darken(#97D4D9, 50%);
+      width: 200px;
+      height: 30px;
+      color: #fff;
+      line-height: 30px;
+      text-align: center;
+      border-radius: 5px;
+      user-select: none;
+    }
+    
+    .button:hover {
+      cursor: pointer;
+    }
+    .button:active {
+      box-shadow: none;
+      position: relative;
+      top: 5px;    
+    }
+
   }
 }

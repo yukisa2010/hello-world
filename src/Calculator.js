@@ -24,6 +24,7 @@ function Calculator(props) {
           </tr>
         </tbody>
       </table>
+      <p id='enter' className='button' onClick={() => props.setQuestions()}>⇦</p>
     </div>
   )
 }

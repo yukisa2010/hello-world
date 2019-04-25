@@ -2,15 +2,10 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './Home' 
 import HeadLine from './HeadLine'
+import Menu from './Menu'
 import Basic from './Basic'
+import Login from './Login'
 import Differencial from './Differencial'
-// import Patient from './Patient' 
-// import Doctor from './Doctor' 
-// import Relations from './Relations' 
-// import Staff from './Staff' 
-// import Hospital from './Hospital' 
-// import Schedule from './Schedule' 
-
 
 
 class App extends Component {
@@ -37,12 +32,37 @@ class App extends Component {
       ],
       hoge: {
         counter: 0
+      },
+      flag: {
+        isOpen: false
       }
 
     }//state
     
     this.moveElements = this.moveElements.bind(this);
+    this.openMenu = this.openMenu.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
+    this.setQuestions = this.setQuestions.bind(this);
   }//constructor
+
+  closeMenu(){
+    this.setState(prevState => {
+      const flag = !prevState.flag
+      return { flag: flag }
+    })
+  }
+
+  
+  openMenu(){
+    this.setState(prevState => {
+      const flag = !prevState.flag
+      return { flag: flag }
+    })
+  }
+
+  setQuestions(){
+    console.log('hi---')
+  }
 
 
   countUp(){
@@ -51,8 +71,6 @@ class App extends Component {
       hoge.counter += 1 
       return {hoge: hoge}
     })
-
-
   }
 
   moveElements(cls){
@@ -113,13 +131,21 @@ class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
-        <HeadLine/>
+        <HeadLine
+          openMenu={this.openMenu}
+        />
+        <Menu
+          flag={this.state.flag}
+          closeMenu={this.closeMenu}
+        />
 
           <div>
             <Route
               exact path='/'
               render={
-                () => <Home items={this.state.items}/>
+                () => <Home 
+                      items={this.state.items}
+                      />
               }
             />
             <Route
@@ -130,8 +156,15 @@ class App extends Component {
                       classes={this.state.classes}
                       moveElements={this.moveElements}
                       afterEvents={this.afterEvents}
+                      setQuestions={this.setQuestions}
                       />
              }
+            />
+            <Route
+              exact path='/Login'
+              render={
+                () => <Login/>
+              }
             />
             <Route path='/differencial' component={Differencial} />
           </div>
