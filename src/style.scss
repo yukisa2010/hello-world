@@ -195,6 +195,11 @@ p {
   margin:0 auto;
   border-bottom: 10px solid #D1A946;
 
+  .math-content {
+    padding-top: 40px;
+    overflow: hidden;
+  }
+
   p {
     color: white;
     text-align: center;

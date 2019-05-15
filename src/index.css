@@ -1,7 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -22,19 +24,16 @@ p {
   justify-content: space-between;
   overflow: hidden;
 }
-
 .header .skyblue {
-  color: #97D4D9;
+  color: #97d4d9;
   font-size: 40px;
   margin-top: 15px;
   margin-right: 15px;
 }
-
 .header .skyblue:hover {
   cursor: pointer;
   color: #40a8b0;
 }
-
 .header img {
   display: block;
   padding-top: 10px;
@@ -56,9 +55,8 @@ p {
   overflow: auto;
   min-height: 100%;
   box-sizing: border-box;
-  transition: .4s;
+  transition: 0.4s;
 }
-
 #menu .close {
   cursor: pointer;
   font-size: 30px;
@@ -67,11 +65,9 @@ p {
   margin-top: 10px;
   padding-right: 20px;
 }
-
 #menu .close:hover {
-  color: #DB5353;
+  color: #db5353;
 }
-
 #menu ul {
   margin-top: 50px;
   font-size: 20px;
@@ -79,7 +75,6 @@ p {
   width: 100%;
   height: 100%;
 }
-
 #menu ul li {
   color: #fff;
 }
@@ -102,19 +97,17 @@ p {
   width: 238px;
   height: 278px;
   border-radius: 10px;
-  background-color: #CCCCCC;
+  background-color: #cccccc;
   overflow: hidden;
 }
-
 .WorkParts img {
   display: block;
   width: 185px;
   height: 185px;
   margin: 10px auto;
 }
-
 .WorkParts p {
-  background-color: #DB5353;
+  background-color: #db5353;
   color: #fff;
   border-radius: 10px;
   line-height: 38px;
@@ -123,11 +116,9 @@ p {
   width: 175px;
   box-shadow: 0 5px 0 #a52323;
 }
-
 .WorkParts .button:hover {
   cursor: pointer;
 }
-
 .WorkParts .button:active {
   box-shadow: none;
   position: relative;
@@ -138,14 +129,12 @@ p {
   margin-left: 42px;
   overflow: hidden;
 }
-
 .calendar table {
   border-collapse: separate;
   border-spacing: 5px;
 }
-
 .calendar td {
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   border-radius: 4px;
   width: 25px;
   height: 25px;
@@ -161,24 +150,19 @@ p {
   margin-bottom: 5px;
   margin-left: 42px;
 }
-
 .progress td:first-child {
   width: 80px;
 }
-
 .progress td:last-child {
   width: 300px;
 }
-
 .progress p {
   margin-right: 10px;
 }
-
 .progress .progress-bar {
   width: 150px;
   height: 20px;
 }
-
 .progress .progress-bar .backgray {
   height: 20px;
   width: 30%;
@@ -187,48 +171,44 @@ p {
 .black-board {
   width: 800px;
   height: 280px;
-  background-color: #0D6800;
+  background-color: #0d6800;
   margin: 0 auto;
-  border-bottom: 10px solid #D1A946;
+  border-bottom: 10px solid #d1a946;
 }
-
+.black-board .math-content {
+  padding-top: 30px;
+  overflow: hidden;
+}
 .black-board p {
   color: white;
   text-align: center;
   font-size: 45px;
-  transition: .5s;
+  transition: 0.5s;
 }
-
 .black-board p.begin {
   opacity: 0;
   font-size: 20px;
 }
-
 .black-board p.begin.change {
   transform: translate(0, 38px) scale(1.8, 1.8);
   opacity: 0.3;
 }
-
 .black-board p.prev {
   opacity: 0.3;
   font-size: 40px;
 }
-
 .black-board p.prev.change {
   transform: translate(0, 55px) scale(1.2, 1.2);
   opacity: 1;
 }
-
 .black-board p.center.change {
   transform: translate(0, 55px) scale(0.85, 0.85);
   opacity: 0.2;
 }
-
 .black-board p.next {
   opacity: 0.3;
   font-size: 40px;
 }
-
 .black-board p.next.change {
   opacity: 0;
   transform: translate(0, 55px) scale(0.85, 0.85);
@@ -239,35 +219,30 @@ p {
   margin: 10px auto;
   position: relative;
 }
-
 .calculator table {
   padding-top: 10px;
   border-collapse: separate;
   border-spacing: 5px;
 }
-
 .calculator td {
   width: 50px;
   background-color: #534741;
-  box-shadow: 0 3px 0 #352E2A;
+  box-shadow: 0 3px 0 #352e2a;
   color: #fff;
   border-radius: 50px;
   text-align: center;
   user-select: none;
 }
-
 .calculator td:hover {
   cursor: pointer;
 }
-
 .calculator td:active {
   box-shadow: none;
   position: relative;
   top: 3px;
 }
-
 .calculator p {
-  background-color: #DB5353;
+  background-color: #db5353;
   color: #fff;
   box-shadow: 0 3px 0 #901e1e;
   width: 50px;
@@ -280,11 +255,9 @@ p {
   right: -30px;
   user-select: none;
 }
-
 .calculator .button:hover {
   cursor: pointer;
 }
-
 .calculator .button:active {
   box-shadow: none;
   bottom: 0;
@@ -297,14 +270,12 @@ p {
   overflow: hidden;
   border-radius: 20px;
 }
-
 .login .box img {
   display: block;
   margin: 20px auto 30px;
   border-radius: 10px;
 }
-
-.login .box input[type='text'] {
+.login .box input[type="text"] {
   display: block;
   margin: 10px auto;
   text-align: center;
@@ -312,11 +283,10 @@ p {
   height: 20px;
   width: 170px;
 }
-
 .login .box p {
   display: block;
   margin: 20px auto;
-  background-color: #97D4D9;
+  background-color: #97d4d9;
   box-shadow: 0 5px 0 #1e4f53;
   width: 200px;
   height: 30px;
@@ -326,11 +296,9 @@ p {
   border-radius: 5px;
   user-select: none;
 }
-
 .login .box .button:hover {
   cursor: pointer;
 }
-
 .login .box .button:active {
   box-shadow: none;
   position: relative;
