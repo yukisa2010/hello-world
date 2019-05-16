@@ -78,13 +78,8 @@ function BlackBoard(props) {
   };
 
   return (
-    <div
-      className="black-board"
-      onClick={() => {
-        itemChange();
-      }}
-    >
-      <div className="math-content">
+    <div className="black-board">
+      <div className="math-content" onClick={() => itemChange()}>
         <animated.div style={prop0}>{exercises[count + 2]}</animated.div>,
         <animated.div style={prop1}>{exercises[count + 1]}</animated.div>,
         <animated.div style={prop2}>{exercises[count + 0]}</animated.div>
