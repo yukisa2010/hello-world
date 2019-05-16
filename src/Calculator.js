@@ -37,7 +37,7 @@ function Calculator(props) {
         id="enter"
         className="button"
         onClick={() => {
-          itemChange();
+          props.itemChange();
         }}
       >
         ⇦

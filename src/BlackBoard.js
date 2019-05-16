@@ -60,29 +60,20 @@ function BlackBoard(props) {
     reset: true
   });
 
-  const exercises = [
-    "",
-    "1 + 1 = ?",
-    "2 + 1 = ?",
-    "3 + 1 = ?",
-    "4 + 1 = ?",
-    "5 + 1 = ?",
-    "6 + 1 = ?",
-    "7 + 1 = ?",
-    ""
-  ];
-
-  const [count, setCount] = useState(0);
-  const itemChange = () => {
-    setCount(count + 1);
-  };
-
   return (
     <div className="black-board">
       <div className="math-content" onClick={() => itemChange()}>
-        <animated.div style={prop0}>{exercises[count + 2]}</animated.div>,
-        <animated.div style={prop1}>{exercises[count + 1]}</animated.div>,
-        <animated.div style={prop2}>{exercises[count + 0]}</animated.div>
+        <animated.div style={prop0}>
+          {props.exercises[props.count + 2]}
+        </animated.div>
+        ,
+        <animated.div style={prop1}>
+          {props.exercises[props.count + 1]}
+        </animated.div>
+        ,
+        <animated.div style={prop2}>
+          {props.exercises[props.count + 0]}
+        </animated.div>
       </div>
     </div>
   );

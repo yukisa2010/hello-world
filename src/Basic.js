@@ -8,13 +8,8 @@ const Basic = props => {
 
   return (
     <div className="basic">
-      <BlackBoard
-        classes={props.classes}
-        questions={props.questions}
-        moveElements={props.moveElements}
-        afterEvents={props.afterEvents}
-      />
-      <Calculator setQuestions={props.setQuestions} />
+      <BlackBoard count={props.count} exercises={props.exercises} />
+      <Calculator itemChange={props.itemChange} />
     </div>
   );
 };
