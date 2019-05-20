@@ -4,31 +4,42 @@ function Calculator(props) {
   // console.log(props.item.logo);
   // let logoName = props.items.logo
 
+  const [value, setValue] = useState('');
+  const changeValue = e => {
+    setValue(e.target.value)
+  };
+
+
   return (
     <div className="calculator">
-      <input type="text" />
+      <input 
+        type="text" 
+        value={value} 
+        onChange={() => {changeValue(event)}}/>
       <table>
         <tbody>
           <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
+            <td onClick={() => {setValue(value + 1)}}>1</td>
+            <td onClick={() => {setValue(value + 2)}}>2</td>
+            <td onClick={() => {setValue(value + 3)}}>3</td>
           </tr>
           <tr>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
+            <td onClick={() => {setValue(value + 4)}}>4</td>
+            <td onClick={() => {setValue(value + 5)}}>5</td>
+            <td onClick={() => {setValue(value + 6)}}>6</td>
           </tr>
           <tr>
-            <td>7</td>
-            <td>8</td>
-            <td>9</td>
+            <td onClick={() => {setValue(value + 7)}}>7</td>
+            <td onClick={() => {setValue(value + 8)}}>8</td>
+            <td onClick={() => {setValue(value + 9)}}>9</td>
           </tr>
           <tr>
-            <td>0</td>
-            <td>000</td>
+            <td onClick={() => {setValue(value + 0)}}>0</td>
+            <td onClick={() => {setValue(value + '000')}}>000</td>
             <td>
-              <i className="fas fa-arrow-left" />
+              <i 
+              className="fas fa-arrow-left"  
+              onClick={() => {setValue(value.slice(0,-1))}}/>
             </td>
           </tr>
         </tbody>
