@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
+import "./style.scss";
 
 function BlackBoard(props) {
   const prop0 = useSpring({
@@ -60,20 +61,54 @@ function BlackBoard(props) {
     reset: true
   });
 
+  const outer = useSpring({
+    from: {
+      backgroundColor: "red",
+      width: "100px",
+      height: "100px",
+      borderRadius: "50%",
+      zIndex: "-1"
+    },
+    to: {
+      backgroundColor: "red",
+      width: "80px",
+      height: "80px",
+      borderRadius: "50%",
+      textAlign: "center",
+      zIndex: "1"
+    }
+  });
+
+  const inner = useSpring({
+    from: {
+      width: "120%",
+      height: "120%"
+    },
+    to: {
+      width: "50%",
+      height: "50%"
+    }
+  });
+
+  // return <AnimatedDonut percent={props.value} />
   return (
     <div className="black-board">
       <div className="math-content" onClick={() => itemChange()}>
         <animated.div style={prop0}>
           {props.exercises[props.count + 2]}
         </animated.div>
+        <animated.div style={outer} className="outer">
+          <div className="inner" />
+        </animated.div>
         ,
         <animated.div style={prop1}>
           {props.exercises[props.count + 1]}
         </animated.div>
-        ,
+        <animated.div>〇</animated.div>,
         <animated.div style={prop2}>
           {props.exercises[props.count + 0]}
         </animated.div>
+        <animated.div>〇</animated.div>
       </div>
     </div>
   );
