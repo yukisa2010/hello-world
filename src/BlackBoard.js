@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSpring, animated } from "react-spring";
+import { useSpring, config, animated } from "react-spring";
 import "./style.scss";
 
 function BlackBoard(props) {
@@ -61,33 +61,37 @@ function BlackBoard(props) {
     reset: true
   });
 
-  const outer = useSpring({
+  const turnAround = useSpring({
+    transformStyle: "preserve-3d",
     from: {
-      backgroundColor: "red",
-      width: "100px",
-      height: "100px",
-      borderRadius: "50%",
-      zIndex: "-1"
+      transform: "rotateY(0deg)"
     },
     to: {
-      backgroundColor: "red",
-      width: "80px",
-      height: "80px",
-      borderRadius: "50%",
-      textAlign: "center",
-      zIndex: "1"
-    }
+      transform: "rotateY(1080deg)"
+    },
+    config: config.gentle,
+    reset: true
   });
 
-  const inner = useSpring({
+  const sparkling = useSpring({
     from: {
-      width: "120%",
-      height: "120%"
+      opacity: 0,
+      transform: "translateY(0px) scale(1)"
     },
-    to: {
-      width: "50%",
-      height: "50%"
-    }
+    to: async next => {
+      while (1)
+        await next({
+          radians: 2 * Math.PI,
+          opacity: 1,
+          transform: "translateY(-20px) scale(1.5)"
+        });
+    },
+    // to: {
+    //   opacity: 1,
+    //   transform: 'translateY(0px)'
+    // },
+    config: { duration: 1000 },
+    reset: true
   });
 
   // return <AnimatedDonut percent={props.value} />
@@ -97,18 +101,16 @@ function BlackBoard(props) {
         <animated.div style={prop0}>
           {props.exercises[props.count + 2]}
         </animated.div>
-        <animated.div style={outer} className="outer">
-          <div className="inner" />
-        </animated.div>
-        ,
         <animated.div style={prop1}>
           {props.exercises[props.count + 1]}
         </animated.div>
-        <animated.div>〇</animated.div>,
         <animated.div style={prop2}>
           {props.exercises[props.count + 0]}
         </animated.div>
-        <animated.div>〇</animated.div>
+        <animated.i style={turnAround} class="far fa-circle" />
+        <animated.i style={sparkling} class="fas fa-star" />
+        <animated.i style={sparkling} class="fas fa-star" />
+        <animated.i style={sparkling} class="fas fa-star" />
       </div>
     </div>
   );
