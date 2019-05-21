@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "mathjax": "2.7.5",
+    "mathml": "1.1.8",
     "node-sass": "4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-mathjax-preview": "0.1.11",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "react-spring": "8.0.20",

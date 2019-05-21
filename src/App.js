@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import Home from "./Home";
 import HeadLine from "./HeadLine";
@@ -55,7 +55,7 @@ const App = () => {
   };
 
   const [exercises, setExercises] = useState([
-    { question: "1 + 1 = ?", answer: "2" },
+    { question: `log${24} = ?`, answer: "2" },
     { question: "2 + 1 = ?", answer: "3" },
     { question: "3 + 1 = ?", answer: "4" },
     { question: "4 + 1 = ?", answer: "5" },
@@ -73,9 +73,7 @@ const App = () => {
     console.log(exercises[count + 1].answer, value + "");
     if (exercises[count + 1].answer === value + "") {
       console.log("ok");
-      () => {
-        itemChange();
-      };
+      itemChange();
       setValue("");
     } else {
       console.log("NG");
