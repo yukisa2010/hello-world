@@ -55,16 +55,32 @@ const App = () => {
   };
 
   const [exercises, setExercises] = useState([
-    "",
-    "1 + 1 = ?",
-    "2 + 1 = ?",
-    "3 + 1 = ?",
-    "4 + 1 = ?",
-    "5 + 1 = ?",
-    "6 + 1 = ?",
-    "7 + 1 = ?",
-    ""
+    { question: "1 + 1 = ?", answer: "2" },
+    { question: "2 + 1 = ?", answer: "3" },
+    { question: "3 + 1 = ?", answer: "4" },
+    { question: "4 + 1 = ?", answer: "5" },
+    { question: "5 + 1 = ?", answer: "6" },
+    { question: "6 + 1 = ?", answer: "7" },
+    { question: "7 + 1 = ?", answer: "8" }
   ]);
+
+  const [value, setValue] = useState("");
+  const changeValue = e => {
+    setValue(e.target.value);
+  };
+
+  const judgeInput = () => {
+    console.log(exercises[count + 1].answer, value + "");
+    if (exercises[count + 1].answer === value + "") {
+      console.log("ok");
+      () => {
+        itemChange();
+      };
+      setValue("");
+    } else {
+      console.log("NG");
+    }
+  };
 
   const [count, setCount] = useState(0);
   const itemChange = () => {
@@ -85,6 +101,10 @@ const App = () => {
               <Basic
                 itemChange={itemChange}
                 exercises={exercises}
+                judgeInput={judgeInput}
+                changeValue={changeValue}
+                setValue={setValue}
+                value={value}
                 count={count}
               />
             )}

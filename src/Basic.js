@@ -9,7 +9,13 @@ const Basic = props => {
   return (
     <div className="basic">
       <BlackBoard count={props.count} exercises={props.exercises} />
-      <Calculator itemChange={props.itemChange} />
+      <Calculator
+        itemChange={props.itemChange}
+        judgeInput={props.judgeInput}
+        changeValue={props.changeValue}
+        value={props.value}
+        setValue={props.setValue}
+      />
     </div>
   );
 };

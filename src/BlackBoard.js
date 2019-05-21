@@ -99,18 +99,18 @@ function BlackBoard(props) {
     <div className="black-board">
       <div className="math-content" onClick={() => itemChange()}>
         <animated.div style={prop0}>
-          {props.exercises[props.count + 2]}
+          {props.exercises[props.count + 2].question}
         </animated.div>
         <animated.div style={prop1}>
-          {props.exercises[props.count + 1]}
+          {props.exercises[props.count + 1].question}
         </animated.div>
         <animated.div style={prop2}>
-          {props.exercises[props.count + 0]}
+          {props.exercises[props.count + 0].question}
         </animated.div>
-        <animated.i style={turnAround} class="far fa-circle" />
-        <animated.i style={sparkling} class="fas fa-star" />
-        <animated.i style={sparkling} class="fas fa-star" />
-        <animated.i style={sparkling} class="fas fa-star" />
+        <animated.i style={turnAround} className="far fa-circle" />
+        <animated.i style={sparkling} className="fas fa-star" />
+        <animated.i style={sparkling} className="fas fa-star" />
+        <animated.i style={sparkling} className="fas fa-star" />
       </div>
     </div>
   );
